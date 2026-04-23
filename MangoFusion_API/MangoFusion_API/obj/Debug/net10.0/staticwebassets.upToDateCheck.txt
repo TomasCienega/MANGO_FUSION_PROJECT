@@ -1,0 +1,9 @@
+wwwroot\images\carrot_love.jpg
+wwwroot\images\mango_paradise.jpg
+wwwroot\images\noodles.jpg
+wwwroot\images\pav_bhaji.jpg
+wwwroot\images\pizza.jpg
+wwwroot\images\samosa.jpg
+wwwroot\images\soup.jpg
+wwwroot\images\spring_roll.jpg
+wwwroot\images\sweet_rolls.jpg
