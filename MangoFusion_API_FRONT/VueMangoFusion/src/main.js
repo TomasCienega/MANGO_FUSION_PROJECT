@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 import { createPinia } from 'pinia';
 import { useThemeStore } from './stores/themeStore';
 import piniaPluginPersistedstate from 'pinia-plugin-persistedstate';
-
+import { useAuthStore } from './stores/authStore';
 import App from './views/App.vue';
 import router from './router';
 // Importamos el CSS de Bootstrap
@@ -22,4 +22,7 @@ const themeStore = useThemeStore();
 if (themeStore.theme) {
   document.body.setAttribute('data-bs-theme', themeStore.theme);
 }
+const authStore = useAuthStore();
+authStore.initialize();
+
 app.mount('#app');

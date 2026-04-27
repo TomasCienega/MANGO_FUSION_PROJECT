@@ -40,7 +40,7 @@
               >Orders</router-link
             >
           </li>
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" v-if="authStore.isAdmin">
             <a
               class="nav-link dropdown-toggle"
               href="#"
@@ -83,7 +83,7 @@
               ></router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="!authStore.isAuthenticated">
             <router-link
               class="nav-link"
               aria-current="page"
@@ -91,7 +91,7 @@
               >Sign In</router-link
             >
           </li>
-          <li class="nav-item">
+          <li class="nav-item" v-if="!authStore.isAuthenticated">
             <router-link
               class="nav-link"
               aria-current="page"
@@ -99,8 +99,10 @@
               >Sign Up</router-link
             >
           </li>
-          <li class="nav-item">
-            <button class="nav-link px-2" aria-current="page">Logout</button>
+          <li class="nav-item" v-if="authStore.isAuthenticated">
+            <button class="nav-link px-2" aria-current="page" @click="authStore.signOut()">
+              Logout
+            </button>
           </li>
           <li class="nav-item dropdown">
             <a
@@ -143,8 +145,10 @@
 import { APP_ROUTE_NAMES } from '@/constants/routeNames';
 import { useThemeStore } from '@/stores/themeStore';
 import { useCartStore } from '@/stores/cartStore';
+import { useAuthStore } from '@/stores/authStore';
 
 const cartStore = useCartStore();
+const authStore = useAuthStore();
 const themeStore = useThemeStore();
 </script>
 <style scoped></style>

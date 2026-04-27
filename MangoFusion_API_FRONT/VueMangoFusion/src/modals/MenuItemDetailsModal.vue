@@ -60,6 +60,13 @@
                   <h4 class="fw-bold mb-0 fs-5 fs-sm-4">{{ props.menuItem.name }}</h4>
                 </div>
 
+                <div>
+                  <StarRating
+                    :item-id="props.menuItem.id"
+                    :rating="props.menuItem.rating"
+                    :readonly="true"
+                  />
+                </div>
                 <!-- Category -->
                 <div>
                   <div class="text-secondary small mb-1">
@@ -115,6 +122,7 @@
 </template>
 <script setup>
 import { CONFIG_IMAGE_URL } from '@/constants/config';
+import StarRating from '@/components/shared/StarRating.vue';
 const props = defineProps({
   show: Boolean,
   menuItem: Object,

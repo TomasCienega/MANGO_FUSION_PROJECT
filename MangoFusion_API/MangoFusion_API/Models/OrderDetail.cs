@@ -10,7 +10,7 @@ namespace MangoFusion_API.Models
         [Required]
         public int OrderHeaderId { get; set; }
         [ForeignKey("OrderHeaderId")]
-        public OrderHeader OrderHeader { get; set; } = null!;
+        public OrderHeader? OrderHeader { get; set; } = null!;
         [Required]
         public int MenuItemId { get; set; }
         [ForeignKey("MenuItemId")]

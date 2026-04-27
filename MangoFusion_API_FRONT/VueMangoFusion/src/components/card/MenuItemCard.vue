@@ -34,6 +34,13 @@
           {{ props.menuItem.description }}
         </p>
 
+        <div class="mb-2">
+          <StarRating
+            :item-id="props.menuItem.id"
+            :rating="props.menuItem.rating"
+            :readonly="true"
+          />
+        </div>
         <!-- Tags -->
         <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
           <div
@@ -87,6 +94,7 @@
 import { CONFIG_IMAGE_URL } from '@/constants/config';
 import { useCartStore } from '@/stores/cartStore';
 import { computed, ref } from 'vue';
+import StarRating from '../shared/StarRating.vue';
 
 const cartStore = useCartStore();
 const isProcessing = ref(false);

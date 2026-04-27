@@ -13,6 +13,7 @@ import OrderManagementView from '@/views/order/OrderManagementView.vue';
 import { APP_ROUTE_NAMES } from '@/constants/routeNames';
 
 import { createRouter, createWebHistory } from 'vue-router';
+import { requireAuth, requireAdmin } from './guards';
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -41,38 +42,45 @@ const router = createRouter({
       path: '/cart',
       name: APP_ROUTE_NAMES.CART,
       component: ShoppingCartView,
+      beforeEnter: [requireAuth],
     },
     {
       path: '/admin/manage-menu-items',
       name: APP_ROUTE_NAMES.MENU_ITEM_LIST,
       component: MenuItemListView,
+      beforeEnter: [requireAdmin],
     },
     {
       path: '/admin/manage-menu-items/create',
       name: APP_ROUTE_NAMES.CREATE_MENU_ITEM,
       component: MenuItemUpsertView,
+      beforeEnter: [requireAdmin],
     },
     {
       path: '/admin/manage-menu-items/update/:id',
       name: APP_ROUTE_NAMES.EDIT_MENU_ITEM,
       component: MenuItemUpsertView,
       props: true,
+      beforeEnter: [requireAdmin],
     },
     {
       path: '/admin/order-confirmation/:orderId',
       name: APP_ROUTE_NAMES.ORDER_CONFIRM,
       component: OrderConfirmationView,
       props: true,
+      beforeEnter: [requireAuth],
     },
     {
       path: '/order-list',
       name: APP_ROUTE_NAMES.ORDER_LIST,
       component: OrderHistoryListView,
+      beforeEnter: [requireAuth],
     },
     {
       path: '/admin/order-management',
       name: APP_ROUTE_NAMES.MANAGE_ORDER_ADMIN,
       component: OrderManagementView,
+      beforeEnter: [requireAdmin],
     },
     {
       path: '/:catchAll(.*)',

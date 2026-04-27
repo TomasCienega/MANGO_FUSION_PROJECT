@@ -91,10 +91,16 @@
   </div>
 </template>
 <script setup>
-import { ref, computed, reactive } from 'vue';
+import { ref, reactive, onMounted } from 'vue';
 import { useCartStore } from '@/stores/cartStore';
+import { useAuthStore } from '@/stores/authStore';
+import orderService from '@/services/orderService';
+import { APP_ROUTE_NAMES } from '@/constants/routeNames';
+import { useRouter } from 'vue-router';
 
+const router = useRouter();
 const cartStore = useCartStore();
+const authStore = useAuthStore();
 const isSubmitting = ref(false);
 const errorList = reactive([]);
 const orderData = reactive({
@@ -114,7 +120,15 @@ const emit = defineEmits(['close']);
 const closeModal = () => {
   emit('close');
 };
-const submitOrder = () => {
+onMounted(() => {
+  if (authStore.isAuthenticated) {
+    orderData.applicationUserId = authStore.user.id;
+    orderData.pickUpName = authStore.user.name;
+    orderData.pickUpEmail = authStore.user.email;
+  }
+});
+
+const submitOrder = async () => {
   try {
     errorList.length = 0;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -134,15 +148,33 @@ const submitOrder = () => {
     // 2. Si pasó las validaciones, ahora sí activamos el spinner
     isSubmitting.value = true;
 
-    setTimeout(() => {
-      isSubmitting.value = false;
+    //place Order
+    orderData.orderTotal = cartStore.cartTotal;
+    orderData.totalItem = cartStore.cartCount;
+    orderData.orderDetailsDTO = Array.isArray(cartStore.cartItems)
+      ? cartStore.cartItems.map((item) => ({
+          menuItemId: item.id,
+          itemName: item.name,
+          price: item.price,
+          quantity: item.quantity,
+        }))
+      : [];
+    const orderHeader = await orderService.createOrder(orderData);
+    if (orderHeader && orderHeader.orderHeaderId > 0) {
       cartStore.clearCart();
-      closeModal();
-    }, 2000);
+      router.push({
+        name: APP_ROUTE_NAMES.ORDER_CONFIRM,
+        params: { orderId: orderHeader.orderHeaderId },
+      });
+    }
+    console.log('Order created successfully with ID:', orderHeader.id, orderHeader);
   } catch (err) {
     console.error('Error submitting order:', err);
     errorList.push('An unexpected error occurred.');
     isSubmitting.value = false; // Seguridad por si algo truena
+  } finally {
+    // 4. Pase lo que pase, apagamos el spinner
+    isSubmitting.value = false;
   }
 };
 </script>

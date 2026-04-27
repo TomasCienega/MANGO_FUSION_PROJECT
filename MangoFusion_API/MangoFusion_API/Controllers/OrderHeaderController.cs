@@ -2,6 +2,7 @@
 using MangoFusion_API.Models;
 using MangoFusion_API.Models.Dto;
 using MangoFusion_API.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using System.Net;
 namespace MangoFusion_API.Controllers
 {
     [Route("api/[controller]")]
+    [Authorize]
     [ApiController]
     public class OrderHeaderController : ControllerBase
     {
@@ -27,13 +29,39 @@ namespace MangoFusion_API.Controllers
         {
             try
             {
-                IQueryable<OrderHeader> orderHeaderList = _context.OrderHeaders.Include(u => u.OrderDetails)
-                    .ThenInclude(u => u.MenuItem).OrderByDescending(u => u.OrderHeaderId);
+                // Traemos los datos
+                var orderHeaderList = await _context.OrderHeaders
+                    .Include(u => u.OrderDetails)
+                    .ThenInclude(u => u.MenuItem)
+                    .Where(u => string.IsNullOrEmpty(userId) || u.ApplicationUserId == userId)
+                    .OrderByDescending(u => u.OrderHeaderId)
+                    .ToListAsync(); // <-- Importante ejecutar la lista aquí
+
+                // TRUCO: Quitamos la referencia circular manualmente si no quieres usar DTOs aún
+                foreach (var order in orderHeaderList)
+                {
+                    foreach (var detail in order.OrderDetails)
+                    {
+                        detail.OrderHeader = null; // Esto rompe el ciclo para el JSON
+                    }
+                }
+
                 if (!string.IsNullOrEmpty(userId))
                 {
-                    orderHeaderList = orderHeaderList.Where(u => u.ApplicationUserId == userId);
+                    orderHeaderList = orderHeaderList.Where(o => o.ApplicationUserId == userId).ToList();
+                    _response.Result = orderHeaderList;
                 }
-                _response.Result = orderHeaderList;
+                else
+                {
+                    if (User.IsInRole(StaticDetails.Role_Admin))
+                    {
+                        _response.Result = orderHeaderList;
+                    }
+                    else
+                    {
+                        _response.Result = new List<OrderHeader>();
+                    }
+                }
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);
             }
@@ -69,6 +97,13 @@ namespace MangoFusion_API.Controllers
                     return NotFound(_response);
                 }
 
+                if (orderHeader != null && orderHeader.OrderDetails != null)
+                {
+                    foreach (var detail in orderHeader.OrderDetails)
+                    {
+                        detail.OrderHeader = null;
+                    }
+                }
                 _response.Result = orderHeader;
                 _response.StatusCode = HttpStatusCode.OK;
                 return Ok(_response);

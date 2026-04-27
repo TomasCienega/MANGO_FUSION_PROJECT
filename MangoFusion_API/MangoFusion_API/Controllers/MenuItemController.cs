@@ -1,6 +1,8 @@
 ﻿using MangoFusion_API.Data;
 using MangoFusion_API.Models;
 using MangoFusion_API.Models.Dto;
+using MangoFusion_API.Utility;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Net;
@@ -9,6 +11,7 @@ namespace MangoFusion_API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Roles =StaticDetails.Role_Admin)]
     public class MenuItemController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
@@ -22,6 +25,7 @@ namespace MangoFusion_API.Controllers
         }
 
         [HttpGet]
+        [AllowAnonymous]
         public async Task<IActionResult> GetItemsMenu()
         {
             try
@@ -62,6 +66,7 @@ namespace MangoFusion_API.Controllers
         }
 
         [HttpGet("{id:int}", Name = "GetMenuItem")]
+        [AllowAnonymous]
         public async Task<IActionResult> GetMenuItemById(int id)
         {
             try
