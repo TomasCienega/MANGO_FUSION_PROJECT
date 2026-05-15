@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MangoFusion_API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e519fce259bed873d2472f853803992a75b79f6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cc7b81e2dc77956cbf664077a94c90b4107b1eb6")]
 [assembly: System.Reflection.AssemblyProductAttribute("MangoFusion_API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MangoFusion_API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

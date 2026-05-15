@@ -3,20 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|c:\\users\\tomas\\downloads\\ejerciciosdeprogramacion\\mango_fusion_project\\mangofusion_api\\mangofusion_api\\controllers\\orderheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|solutionrelative:mangofusion_api\\controllers\\orderheadercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|c:\\users\\tomas\\downloads\\ejerciciosdeprogramacion\\mango_fusion_project\\mangofusion_api\\mangofusion_api\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|solutionrelative:mangofusion_api\\controllers\\orderdetailscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|c:\\users\\tomas\\downloads\\ejerciciosdeprogramacion\\mango_fusion_project\\mangofusion_api\\mangofusion_api\\controllers\\menuitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|solutionrelative:mangofusion_api\\controllers\\menuitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|c:\\users\\tomas\\downloads\\ejerciciosdeprogramacion\\mango_fusion_project\\mangofusion_api\\mangofusion_api\\utility\\staticdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|solutionrelative:mangofusion_api\\utility\\staticdetails.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|c:\\users\\tomas\\downloads\\ejerciciosdeprogramacion\\mango_fusion_project\\mangofusion_api\\mangofusion_api\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D00D5DC1-4A88-79B8-70D0-A6E765FC019D}|MangoFusion_API\\MangoFusion_API.csproj|solutionrelative:mangofusion_api\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,51 +23,25 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderDetailsController.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\OrderDetailsController.cs",
-              "RelativeDocumentMoniker": "MangoFusion_API\\Controllers\\OrderDetailsController.cs",
-              "ToolTip": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\OrderDetailsController.cs",
-              "RelativeToolTip": "MangoFusion_API\\Controllers\\OrderDetailsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAOAAAAAAAAAA==",
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Models\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "MangoFusion_API\\Models\\ApiResponse.cs",
+              "ToolTip": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Models\\ApiResponse.cs",
+              "RelativeToolTip": "MangoFusion_API\\Models\\ApiResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T00:24:02.078Z",
+              "WhenOpened": "2026-05-09T22:20:15.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "OrderHeaderController.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\OrderHeaderController.cs",
-              "RelativeDocumentMoniker": "MangoFusion_API\\Controllers\\OrderHeaderController.cs",
-              "ToolTip": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\OrderHeaderController.cs",
-              "RelativeToolTip": "MangoFusion_API\\Controllers\\OrderHeaderController.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAowEIAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T00:19:19.119Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StaticDetails.cs",
-              "DocumentMoniker": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Utility\\StaticDetails.cs",
-              "RelativeDocumentMoniker": "MangoFusion_API\\Utility\\StaticDetails.cs",
-              "ToolTip": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Utility\\StaticDetails.cs",
-              "RelativeToolTip": "MangoFusion_API\\Utility\\StaticDetails.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-26T00:16:57.608Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MenuItemController.cs",
               "DocumentMoniker": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\MenuItemController.cs",
               "RelativeDocumentMoniker": "MangoFusion_API\\Controllers\\MenuItemController.cs",
               "ToolTip": "C:\\Users\\tomas\\Downloads\\EjerciciosDeProgramacion\\MANGO_FUSION_PROJECT\\MangoFusion_API\\MangoFusion_API\\Controllers\\MenuItemController.cs",
               "RelativeToolTip": "MangoFusion_API\\Controllers\\MenuItemController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwBoAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-26T00:15:48.72Z",
               "EditorCaption": ""
